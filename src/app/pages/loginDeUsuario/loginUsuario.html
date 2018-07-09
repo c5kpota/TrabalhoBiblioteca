@@ -1,0 +1,37 @@
+<form [formGroup]="formGroup">  
+    <mat-card fxLayout="column">
+    <mat-card-title>
+        LOGIN
+    </mat-card-title>
+    
+    <mat-card-content fxFlex="100%">
+        <div fxLayout="column">
+        <div fxLayout="row" >
+            <mat-form-field fxFlex="40%">
+                <input matInput type="text" [(ngModel)]="login.login"
+                    placeholder="Login"
+                    formControlName="login"  required>
+                <mat-error align="start"
+                     *ngIf="formGroup.controls['login'].hasError('required')" >
+                     Campo obrigatório</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" >
+            <mat-form-field fxFlex="40%">
+                <input matInput type="text" [(ngModel)]="login.senha"
+                    placeholder="Senha"
+                    formControlName="senha"  required>
+                <mat-error align="start"
+                        *ngIf="formGroup.controls['senha'].hasError('required')" >
+                        Campo obrigatório</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button color="primary" (click)="salvar()" mat-button>Login</button>
+        <button color="secondary" (click)="cancelar()" mat-button>Cancelar</button>
+    </mat-card-actions>
+
+</mat-card>
+</form>

@@ -1,0 +1,36 @@
+<form [formGroup]="formGroup">  
+    <mat-card fxLayout="column">
+    <mat-card-title>
+        Cadastro de Curso
+    </mat-card-title>
+
+    <mat-card-content fxFlex="100%">
+        <div fxLayout="column">
+        <div fxLayout="row" >
+            <mat-form-field fxFlex="32%">
+                <input matInput type="text" [(ngModel)]="cadastro-curso.nome"
+                    placeholder="Nome do curso *"
+                    formControlName="nome"  required>
+                <mat-error align="start"
+                     *ngIf="formGroup.controls['nome'].hasError('required')" >
+                     Campo obrigatório</mat-error>
+            </mat-form-field>
+            <span fxFlex="2%"></span>
+            <mat-form-field fxFlex="32%">
+                <input matInput type="text" [(ngModel)]="cadastro-curso.periodo"
+                    placeholder="Periodos do Curso *"
+                    formControlName="periodo"  required>
+                <mat-error align="start"
+                     *ngIf="formGroup.controls['periodo'].hasError('required')" >
+                     Campo obrigatório</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button color="primary" [disabled]="formGroup.invalid" (click)="salvar()" mat-button>Salvar</button>
+        <button color="secondary" (click)="cancelar()" mat-button>Cancelar</button>
+    </mat-card-actions>
+
+</mat-card>
+</form>

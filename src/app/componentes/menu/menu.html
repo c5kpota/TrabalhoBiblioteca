@@ -1,0 +1,35 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+         Navegação do Sistema   
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+            <mat-list-item>
+                    <a [routerLink]="['/','loginDeUsuario']">
+                        Pagina de Login
+                    </a>
+                </mat-list-item>
+        <mat-list-item> 
+            <a [routerLink]="['/','cadastro-aluno' ]">
+                Cadastrar Aluno
+            </a>
+        </mat-list-item>
+        <mat-list-item>
+            <a [routerLink]="['/','cadastro-livro']">
+                Cadastrar Livro
+            </a>
+        </mat-list-item>
+        <mat-list-item>
+            <a [routerLink]="['/','cadastro-editora']">
+                Cadastrar Editora
+            </a>
+        </mat-list-item>
+        <mat-list-item>
+            <a [routerLink]="['/','cadastro-curso']">
+                Cadastrar Curso
+            </a>
+        </mat-list-item>
+        
+    </mat-list>
+</mat-expansion-panel>

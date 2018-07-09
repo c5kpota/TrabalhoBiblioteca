@@ -1,0 +1,109 @@
+<form [formGroup]="formGroup">
+    <mat-card fxLayout="column">
+        <mat-card-title>
+            Cadastro de Aluno
+        </mat-card-title>
+
+        <mat-card-content fxFlex="100%">
+            <div fxLayout="column">
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.nome" placeholder="Nome" formControlName="nome" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['nome'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.sobrenome" placeholder="Sobrenome" formControlName="sobrenome" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['sobrenome'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                
+                <div fxLayout="row">
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.cpf" placeholder="CPF" formControlName="cpf" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['cpf'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.rg" placeholder="RG" formControlName="rg" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['rg'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.email" placeholder="E-mail" formControlName="email" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['email'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field>
+                            <input matInput [matDatepicker]="picker" placeholder="Data de Nascimento">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error align="start" *ngIf="formGroup.controls['telefone'].hasError('required')">Campo Obrigatório
+                                </mat-error>
+                          </mat-form-field>
+                          
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.telefone" placeholder="Telefone" formControlName="telefone" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['telefone'].hasError('required')">Campo Obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.endereco" placeholder="Endereço" formControlName="endereco" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['endereco'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.numero" placeholder="Número" formControlName="numero" required>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                </div>
+
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.bairro" placeholder="Bairro" formControlName="bairro" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['bairro'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.cidade" placeholder="Cidade" formControlName="cidade" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['cidade'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                            <input matInput type="text" [(ngModel)]="aluno.cep" placeholder="CEP" formControlName="cep" required>
+                            <mat-error align="start" *ngIf="formGroup.controls['cep'].hasError('required')">
+                                Campo obrigatório</mat-error>
+                        </mat-form-field>
+                </div>
+
+                <span fxFlex="20%"></span>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="aluno.graduacao" placeholder="Graduação" formControlName="graduacao" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['graduacao'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button color="primary" [disabled]="formGroup.invalid" (click)="salvar()" mat-button>Salvar</button>
+            <button color="secondary" (click)="cancelar()" mat-button>Cancelar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

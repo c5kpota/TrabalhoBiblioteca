@@ -1,0 +1,29 @@
+<form [formGroup]="formGroup">
+    <mat-card fxLayout="column">
+        <mat-card-title>
+            Cadastro de Editora
+        </mat-card-title>
+        <mat-card-content fxFlex="100%">
+            <div fxLayout="column">
+                <div fxLayout="row">
+                    
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="editora.nome" placeholder="Nome da Editora" formControlName="nome" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['nome'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+<span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="32%">
+                        <input matInput type="text" [(ngModel)]="editora.cnpj" placeholder="CNPJ da Editora" formControlName="cnpj" required>
+                        <mat-error align="start" *ngIf="formGroup.controls['cnpj'].hasError('required')">
+                            Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button color="primary" [disabled]="formGroup.invalid" (click)="salvar()" mat-button>Salvar</button>
+            <button color="secondary" (click)="cancelar()" mat-button>Cancelar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
